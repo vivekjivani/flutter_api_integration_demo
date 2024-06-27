@@ -27,7 +27,7 @@ class _PostListScreenState extends State<PostListScreen> {
     });
   }
 
-  void _deletePost(int id) {
+  void _deletePost(String id) {
     postService.deletePost(id).then((_) {
       _refreshPosts();
       ScaffoldMessenger.of(context).showSnackBar(

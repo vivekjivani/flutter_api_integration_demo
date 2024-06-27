@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../models/post.dart';
 
 class PostService {
-  final String postUrl = 'https://jsonplaceholder.typicode.com/posts';
+  final String postUrl = 'http://10.0.2.2:3001/posts';
 
   // Fetch all posts
   Future<List<Post>> fetchPosts() async {
@@ -23,7 +23,7 @@ class PostService {
   }
 
   // Fetch a single post by ID
-  Future<Post> fetchPostById(int id) async {
+  Future<Post> fetchPostById(String id) async {
     final response = await http.get(Uri.parse('$postUrl/$id'));
 
     if (response.statusCode == 200) {
@@ -64,7 +64,7 @@ class PostService {
   }
 
   // Delete a post
-  Future<void> deletePost(int id) async {
+  Future<void> deletePost(String id) async {
     final response = await http.delete(Uri.parse('$postUrl/$id'));
 
     if (response.statusCode == 200) {

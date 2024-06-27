@@ -38,8 +38,8 @@ class _PostFormScreenState extends State<PostFormScreen> {
   void _savePost() {
     if (_formKey.currentState!.validate()) {
       final post = Post(
-        userId: widget.post?.userId ?? 1,
-        id: widget.post?.id ?? 0,
+        userId: widget.post?.userId ?? "1",
+        id: widget.post?.id ?? "0",
         title: _titleController.text,
         body: _bodyController.text,
       );
